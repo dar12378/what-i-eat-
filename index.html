@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartPlate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>SmartPlate</h1>
+    <p>צלם, רשום, גלה ושתף את המנה שלך</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>הוסף מנה</h2>
+
+      <input
+        type="file"
+        id="photoInput"
+        accept="image/*"
+        capture="environment"
+      />
+
+      <img id="preview" class="preview" />
+
+      <input
+        id="mealInput"
+        type="text"
+        placeholder="לדוגמה: סנדוויץ ביצה / פלפל ממולא"
+      />
+
+      <select id="portion">
+        <option value="small">קטן</option>
+        <option value="normal" selected>רגיל</option>
+        <option value="large">גדול</option>
+      </select>
+
+      <button onclick="analyzeMeal()">חשב ערכים</button>
+    </section>
+
+    <section class="card">
+      <h2>תוצאה תזונתית</h2>
+      <div id="result">עדיין לא חושבה מנה</div>
+    </section>
+
+    <section class="card">
+      <h2>קהילת מנות</h2>
+
+      <div class="post">
+        <h3>🥪 סנדוויץ ביצה</h3>
+        <p>לחם מלא, ביצה, גבינה וירקות.</p>
+        <button onclick="quickMeal('סנדוויץ')">אכלתי גם</button>
+      </div>
+
+      <div class="post">
+        <h3>🫑 פלפל ממולא</h3>
+        <p>אורז, בשר, רוטב עגבניות ותבלינים.</p>
+        <button onclick="quickMeal('פלפל ממולא')">אכלתי גם</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    הנתונים הם הערכה כללית בלבד ואינם מהווים ייעוץ רפואי.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
